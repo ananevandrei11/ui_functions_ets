@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <aside>
+            <nav>
+                <a href="">ITEM 1</a>
+                <a href="">ITEM 2</a>
+                <a href="">ITEM 3</a>
+            </nav>
+        </aside>
+        <section>
+            <h1>Title</h1>
+            <article>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, earum adipisci magni nobis error
+                    incidunt! Aut voluptates nostrum officia ipsam sunt impedit sit autem adipisci et accusantium
+                    praesentium ducimus accusamus harum possimus est maxime magnam voluptate beatae, sed deleniti
+                    blanditiis! Minus voluptates aperiam numquam, iste quod hic omnis rerum corrupti cupiditate earum
+                    harum impedit, magni velit officiis! Fugiat neque aut inventore quidem aperiam quibusdam, tempora
+                    numquam voluptatem repellendus sequi, minima sint laudantium doloremque deleniti veniam eveniet sunt
+                    et harum consequuntur? Culpa, harum perspiciatis?</p>
+            </article>
+            <article>
+                <div class="wrapper">
+                    <div>
+                        <p>lorem ipsum 1</p>
+                    </div>
+                    <div>
+                        <p>lorem ipsum 2</p>
+                    </div>
+                    <div>
+                        <p>lorem ipsum 3</p>
+                    </div>
+                    <div>
+                        <p>lorem ipsum 4</p>
+                    </div>
+                    <div>
+                        <p>lorem ipsum 5</p>
+                    </div>
+                    <div>
+                        <p>lorem ipsum 6</p>
+                    </div>
+                    <div>
+                        <p>lorem ipsum 7</p>
+                    </div>
+                    <div>
+                        <p>lorem ipsum 8</p>
+                    </div>
+                    <div>
+                        <p>lorem ipsum 9</p>
+                    </div>
+                    <div>
+                        <p>lorem ipsum 10</p>
+                    </div>
+                    <div>
+                        <p>lorem ipsum 11</p>
+                    </div>
+                    <div>
+                        <p>lorem ipsum 12</p>
+                    </div>
+                    <div>
+                        <p>lorem ipsum 13</p>
+                    </div>
+                    <div>
+                        <p>lorem ipsum 14</p>
+                    </div>
+                    <div>
+                        <p>lorem ipsum 15</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // $(document).ready(function () {
+        //     $.fn.widthScroll = function (options) {
+        //         function scroll(obj, e) {
+        //             let evt = e.originalEvent;
+        //             let direction = evt.detail ? evt.detail * (-120) : evt.wheelDelta;
+        //             if (direction > 0) {
+        //                 direction = $(obj).scrollLeft() - 120;
+        //             } else {
+        //                 direction = $(obj).scrollLeft() + 120;
+        //             }
+        //             $(obj).scrollLeft(direction);
+        //             e.preventDefault();
+        //         }
+        //         $(this).bind('DOMMouseScroll mousewheel', function (e) {
+        //             scroll(this, e);
+        //         });
+        //     }
+        //     $('.wrapper').widthScroll();
+        // });
+
+
+        function HorizontalScroll(elem) {
+            this.elem = elem;
+
+            this.toushScroll = function () {
+                let obj = document.querySelector('.wrapper');
+                let startX, startY;
+
+                function points() {
+                    startX = obj.scrollLeft + event.pageX;
+                    startY = obj.scrollTop + event.pageY;
+                    return startX, startY;
+                }
+
+                function move() {
+                    obj.scrollLeft = startX - event.pageX;
+                    obj.scrollTop = startY - event.pageY;
+                    return false;
+                }
+                
+                obj.addEventListener('mousedown', function () {
+                    points();
+                    obj.addEventListener('mousemove', move);
+                    obj.onmouseup = function () {
+                        obj.removeEventListener('mousemove', move);
+                        obj.onmouseup = null;
+                    }
+                });
+            }
+
+        }
+
+        let wrapper = new HorizontalScroll('.wrapper');
+        wrapper.toushScroll();
+        // let HorizontalScroll = {
+        //     scrollWhell: function (e, obj) {
+        //         let evt = e.originalEvent;
+        //         let direction = evt.detail ? evt.detail * (-120) : evt.wheelDelta;
+        //         if (direction > 0) {
+        //             direction = $(obj).scrollLeft() - 120;
+        //         } else {
+        //             direction = $(obj).scrollLeft() + 120;
+        //         }
+        //         $(obj).scrollLeft(direction);
+        //         e.preventDefault();
+        //     }
+        // }
+    </script>
+</body>
+
+</html>
