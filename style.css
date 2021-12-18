@@ -35,7 +35,7 @@ section {
     padding: 10px;
 }
 
-article:nth-of-type(2) {
+.horizont_scroll {
     position: relative;
     overflow: hidden;
 }

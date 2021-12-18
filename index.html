@@ -29,7 +29,7 @@
                     numquam voluptatem repellendus sequi, minima sint laudantium doloremque deleniti veniam eveniet sunt
                     et harum consequuntur? Culpa, harum perspiciatis?</p>
             </article>
-            <article>
+            <article class="horizont_scroll">
                 <div class="wrapper">
                     <div>
                         <p>lorem ipsum 1</p>
@@ -80,78 +80,7 @@
             </article>
         </section>
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        // $(document).ready(function () {
-        //     $.fn.widthScroll = function (options) {
-        //         function scroll(obj, e) {
-        //             let evt = e.originalEvent;
-        //             let direction = evt.detail ? evt.detail * (-120) : evt.wheelDelta;
-        //             if (direction > 0) {
-        //                 direction = $(obj).scrollLeft() - 120;
-        //             } else {
-        //                 direction = $(obj).scrollLeft() + 120;
-        //             }
-        //             $(obj).scrollLeft(direction);
-        //             e.preventDefault();
-        //         }
-        //         $(this).bind('DOMMouseScroll mousewheel', function (e) {
-        //             scroll(this, e);
-        //         });
-        //     }
-        //     $('.wrapper').widthScroll();
-        // });
-
-
-        function HorizontalScroll(elem) {
-            this.elem = elem;
-
-            this.toushScroll = function () {
-                let obj = document.querySelector('.wrapper');
-                let startX, startY;
-
-                function points() {
-                    startX = obj.scrollLeft + event.pageX;
-                    startY = obj.scrollTop + event.pageY;
-                    return startX, startY;
-                }
-
-                function move() {
-                    obj.scrollLeft = startX - event.pageX;
-                    obj.scrollTop = startY - event.pageY;
-                    return false;
-                }
-                
-                obj.addEventListener('mousedown', function () {
-                    points();
-                    obj.addEventListener('mousemove', move);
-                    obj.onmouseup = function () {
-                        obj.removeEventListener('mousemove', move);
-                        obj.onmouseup = null;
-                    }
-                });
-            }
-
-        }
-
-        let wrapper = new HorizontalScroll('.wrapper');
-        wrapper.toushScroll();
-        // let HorizontalScroll = {
-        //     scrollWhell: function (e, obj) {
-        //         let evt = e.originalEvent;
-        //         let direction = evt.detail ? evt.detail * (-120) : evt.wheelDelta;
-        //         if (direction > 0) {
-        //             direction = $(obj).scrollLeft() - 120;
-        //         } else {
-        //             direction = $(obj).scrollLeft() + 120;
-        //         }
-        //         $(obj).scrollLeft(direction);
-        //         e.preventDefault();
-        //     }
-        // }
-    </script>
+    <script src="HorizontalScroll.js"></script>
 </body>
 
 </html>

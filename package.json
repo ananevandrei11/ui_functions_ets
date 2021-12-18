@@ -1,0 +1,32 @@
+{
+  "name": "ui_functions_ets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jsdoc-to-markdown": "^7.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ananevandrei11/ui_functions_ets.git"
+  },
+  "keywords": [
+    "UI",
+    "Pure",
+    "Function",
+    "WebDev",
+    "Pure",
+    "CSS",
+    "WevDev"
+  ],
+  "author": "Ananev Andrei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ananevandrei11/ui_functions_ets/issues"
+  },
+  "homepage": "https://github.com/ananevandrei11/ui_functions_ets#readme"
+}
