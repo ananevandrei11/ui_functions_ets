@@ -13,28 +13,28 @@ function HorizontalScroll(elem) {
     this.elem = elem;
 
     this.touchScroll = function () {
-        let obj = document.querySelector(this.elem);
-        let startX, startY;
+        const obj = document.querySelector(this.elem);
+        let isDown = false;
+        let startX;
+        let scrollLeft;
 
-        function points() {
-            startX = obj.scrollLeft + event.pageX;
-            startY = obj.scrollTop + event.pageY;
-            return startX, startY;
-        }
-
-        function move() {
-            obj.scrollLeft = startX - event.pageX;
-            obj.scrollTop = startY - event.pageY;
-            return false;
-        }
-
-        obj.addEventListener('mousedown', function () {
-            points();
-            obj.addEventListener('mousemove', move);
-            obj.onmouseup = function () {
-                obj.removeEventListener('mousemove', move);
-                obj.onmouseup = null;
-            }
+        obj.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - obj.offsetLeft;
+            scrollLeft = obj.scrollLeft;
+        });
+        obj.addEventListener('mouseleave', () => {
+            isDown = false;
+        });
+        obj.addEventListener('mouseup', () => {
+            isDown = false;
+        });
+        obj.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - obj.offsetLeft;
+            const walk = (x - startX) * 1;
+            obj.scrollLeft = scrollLeft - walk;
         });
     }
 
