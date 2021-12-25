@@ -40,14 +40,23 @@ function HorizontalScroll(elem) {
 
     this.wheellScroll = function () {
         let obj = document.querySelector(this.elem);
+        let that = this.elem;
+
+        function clearScrollBody(e, elem) {
+            if (e.target.getAttribute('id') === elem || e.target.classList.contains(elem) || e.target.closest(elem)) {
+                return true;
+            }
+        }
+
+        document.addEventListener('wheel', function(e) {
+            let target = e;
+            let targetWheel = clearScrollBody(target, that);
+            targetWheel ? document.body.style.overflowY = 'hidden' : document.body.style.overflowY = 'auto';
+        });
 
         obj.addEventListener('wheel', function(e) {
             let direction = e.detail ? e.detail * (-120) : e.wheelDelta;
-            if (direction > 0) {
-                direction = this.scrollLeft - 120;
-            } else {
-                direction = this.scrollLeft + 120;
-            }
+            (direction > 0) ? direction = this.scrollLeft - 120 : direction = this.scrollLeft + 120;
             this.scrollLeft = direction;
         });
     }
