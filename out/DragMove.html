@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: HorizontalScroll</title>
+    <title>JSDoc: Class: DragMove</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: HorizontalScroll</h1>
+    <h1 class="page-title">Class: DragMove</h1>
 
     
 
@@ -28,7 +28,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>HorizontalScroll<span class="signature">(targetsElement)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>DragMove<span class="signature">(targetsElement)</span><span class="type-signature"></span></h2>
         
     
 </header>
@@ -41,7 +41,7 @@
     
 
     
-    <h4 class="name" id="HorizontalScroll"><span class="type-signature"></span>new HorizontalScroll<span class="signature">(targetsElement)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="DragMove"><span class="type-signature"></span>new DragMove<span class="signature">(targetsElement)</span><span class="type-signature"></span></h4>
     
 
     
@@ -49,7 +49,7 @@
 
 
 <div class="description">
-    This is a function for horizontal scroll by wheel, by touch & mousedown
+    This is a function for drag element by touch & mousedown
 </div>
 
 
@@ -142,7 +142,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="HorizontalScroll.js.html">HorizontalScroll.js</a>, <a href="HorizontalScroll.js.html#line1">line 1</a>
+        <a href="DragMove.js.html">DragMove.js</a>, <a href="DragMove.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -150,11 +150,9 @@
     <dt class="tag-tutorial">Tutorials:</dt>
     <dd class="tag-tutorial">
         <ul>
-            <li><em class="disabled">Tutorial: create new target object -> new HorizontalScroll(target element)</em></li>
+            <li><em class="disabled">Tutorial: create new target object -> new DragMove(target element)</em></li>
         
-            <li><em class="disabled">Tutorial: call touch & mousedown scroll -> elem.touchScroll();</em></li>
-        
-            <li><em class="disabled">Tutorial: mouse wheel scroll -> elem.wheelScroll();</em></li>
+            <li><em class="disabled">Tutorial: call touch & mousedown drag -> elem.drag();</em></li>
         </ul>
     </dd>
     
@@ -184,7 +182,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>let someName = new HorizontalScroll('.elem');someName.touchScroll();someName.wheellScroll();</code></pre>
+    <pre class="prettyprint"><code>let someName = new DragMove('.elem');someName.drag();</code></pre>
 
 
 

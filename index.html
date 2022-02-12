@@ -6,10 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link
+        href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <section class="drag_move">
+        <input type="checkbox" class="chat-open" id="chat-open">
+        <label for="chat-open">
+            <span class="material-icons-outlined">
+                touch_app
+            </span>
+        </label>
+        <div class="chats">
+            <button class="btn btn-telegram">
+                <span class="material-icons-outlined">
+                    thumb_up
+                </span>
+            </button>
+            <button class="btn btn-viber">
+                <span class="material-icons-outlined">
+                    thumb_down_off_alt
+                </span>
+            </button>
+            <button class="btn btn-whatsapp">
+                <span class="material-icons-outlined">
+                    whatsapp
+                </span>
+            </button>
+        </div>
+    </section>
     <main>
         <aside>
             <nav>
@@ -81,6 +109,8 @@
         </section>
     </main>
     <script src="HorizontalScroll.js"></script>
+    <script src="DragMove.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

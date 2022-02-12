@@ -1,4 +1,5 @@
 /**
+ * @class
  * @description This is a function for horizontal scroll by wheel, by touch & mousedown
  * @constructor HorizontalScroll
  * @param {string} targetsElement .class, #id, tag
